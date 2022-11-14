@@ -5,6 +5,15 @@ import auth from '../middleware/userAuth.js'
 const router = new express.Router()
 
 
+//----For checking
+router.get('/welcome', async (req, res) => {
+  try {
+
+    res.status(200).send('Welcome From Server !')
+  } catch (error) {
+    res.status(400).send(error)
+  }
+})
 //----GET All USER
 router.get('/user', async (req, res) => {
   try {
